@@ -190,6 +190,7 @@ feature! {
                         #[cfg(all(
                             // keep in sync with poll_write
                             not(mio_unsupported_force_poll_poll),
+                            not(feature = "partial-read-is-still-ready"),
                             any(
                                 // epoll
                                 target_os = "android",
