@@ -189,6 +189,7 @@ feature! {
                         // https://github.com/tokio-rs/tokio/issues/5866
                         #[cfg(all(
                             not(mio_unsupported_force_poll_poll),
+                            not(feature = "partial-read-is-still-ready"),
                             any(
                                 // epoll
                                 target_os = "android",
